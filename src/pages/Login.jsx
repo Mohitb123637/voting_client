@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link, useNavigate } from 'react-router-dom';
-import { TextInput, Button } from 'flowbite-react';
+import { TextInput, Button, Spinner } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,7 @@ const Login = () => {
   });
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { profile } = useSelector((state) => state.profile);
@@ -38,6 +39,7 @@ const Login = () => {
   // After login, store the token
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       setError('');
       const resultAction = await dispatch(loginUser(formData));
@@ -52,6 +54,8 @@ const Login = () => {
     } catch (error) {
       setError('An unexpected error occurred');
       console.error('Login failed:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -110,9 +114,23 @@ const Login = () => {
               gradientDuoTone="purpleToPink"
               outline
               className="w-full"
+              disabled={loading}
             >
-              Sign In
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <Spinner
+                    aria-label="Loading"
+                    size="sm"
+                    light={true}
+                    className="mr-2"
+                  />
+                  Signing In...
+                </div>
+              ) : (
+                'Sign In'
+              )}
             </Button>
+
             <div className="flex gap-2 text-sm mt-5">
               <span>Have an account?</span>
               <Link

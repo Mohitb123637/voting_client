@@ -52,9 +52,9 @@ const SignUp = () => {
         <div className="md:w-1/2">
           <Link to="/" className="font-bold dark:text-white text-4xl">
             <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
-              Physics
+              Voting
             </span>
-            Blog
+            App{' '}
           </Link>
           <p className="text-gray-600 dark:text-gray-300 mt-5">
             Welcome! Please fill out the form to create your account and start

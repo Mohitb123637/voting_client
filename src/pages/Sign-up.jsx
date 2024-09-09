@@ -128,6 +128,7 @@ const SignUp = () => {
                 required
                 onChange={handleChange}
                 defaultValue="voter"
+                readOnly
               />
             </div>
             <div className="mb-4 relative">

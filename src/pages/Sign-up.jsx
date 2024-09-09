@@ -127,6 +127,7 @@ const SignUp = () => {
                 placeholder="Your Role"
                 required
                 onChange={handleChange}
+                defaultValue="voter"
               />
             </div>
             <div className="mb-4 relative">

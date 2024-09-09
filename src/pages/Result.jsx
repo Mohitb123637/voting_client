@@ -32,6 +32,10 @@ const Result = () => {
     );
   }
 
+  const sortedCandidates = [...candidateList].sort(
+    (a, b) => b.voteCount - a.voteCount
+  );
+
   return (
     <div className="min-h-screen from-blue-50 via-gray-100 to-blue-50  py-12">
       <div className="container mx-auto px-4 text-blue-800">
@@ -44,9 +48,9 @@ const Result = () => {
           Election Results
         </motion.h1>
 
-        {candidateList.length > 0 ? (
+        {sortedCandidates.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {candidateList.map((candidate) => (
+            {sortedCandidates.map((candidate) => (
               <motion.div
                 key={candidate._id}
                 className="relative bg-white bg-opacity-20 backdrop-blur-xl p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-transform duration-700 ease-in-out "

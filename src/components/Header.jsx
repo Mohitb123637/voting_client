@@ -1,6 +1,5 @@
-import { Button, Navbar, TextInput } from 'flowbite-react';
+import { Button, Navbar } from 'flowbite-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { CiSearch } from 'react-icons/ci';
 import { MdOutlineDarkMode } from 'react-icons/md';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../../store/auth/authAction';
@@ -39,17 +38,7 @@ const Header = () => {
         </span>
         App
       </Link>
-      <form>
-        <TextInput
-          type="text"
-          placeholder="Search..?"
-          rightIcon={CiSearch}
-          className="hidden lg:inline"
-        />
-      </form>
-      <Button className="w-12 h-12 lg:hidden" color="gray" pill>
-        <CiSearch />
-      </Button>
+
       <div className="flex gap-2 md:order-2">
         <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
           <MdOutlineDarkMode />

@@ -58,18 +58,17 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
               >
                 <h2 className="text-4xl font-semibold text-gray-800 mb-5">
-                  Details
+                  Your Details
                 </h2>
                 <ul className="space-y-4">
                   {[
                     { label: 'Age', value: profile?.user.age },
                     { label: 'Mobile', value: profile?.user.mobile },
-                    { label: 'Address', value: profile?.user.address },
                     {
                       label: 'Aadhaar Number',
                       value: profile?.user.adharCardNumber,
                     },
-                    { label: 'Role', value: profile?.user.role },
+                    { label: 'Address', value: profile?.user.address },
                   ].map(({ label, value }) => (
                     <li key={label} className="text-gray-700 flex items-center">
                       <span className="font-semibold w-40 text-gray-600">

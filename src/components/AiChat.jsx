@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRegCommentDots, FaRegTrashAlt, FaTimes } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { chatSend, getChat } from '../../store/ai/chatAction';
 
 const Chat = () => {
@@ -12,9 +12,6 @@ const Chat = () => {
   const dispatch = useDispatch();
   const inputRef = useRef(null);
   const messagesEndRef = useRef(null);
-
-  const chatHistory = useSelector((state) => state?.chat?.data);
-  console.log(chatHistory, 'Chat History');
 
   // Focus input when chat opens
   useEffect(() => {

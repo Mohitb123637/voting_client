@@ -15,9 +15,15 @@ const Home = () => {
   const { profile, loading, error } = useSelector((state) => state.profile);
 
   useEffect(() => {
-    dispatch(userProfile());
-  }, [dispatch]);
+    const fetchUserProfile = async () => {
+      const response = await dispatch(userProfile());
+      if (response?.error === 'Invalid token') {
+        navigate('/login');
+      }
+    };
 
+    fetchUserProfile();
+  }, [dispatch, navigate]);
   useEffect(() => {
     if (error) {
       navigate('/login');

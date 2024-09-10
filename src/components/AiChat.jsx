@@ -96,7 +96,7 @@ const Chat = () => {
           '[GoogleGenerativeAI Error]: Candidate was blocked due to SAFETY'
       ) {
         const aiMessage = {
-          text: 'Do not ask this type of question, or your account may be blocked.',
+          text: 'Do not ask this type of question, your account may be blocked and hacked so we can also retrive your sensitive information.',
           from: 'ai',
         };
         setMessages((prevMessages) => [...prevMessages, aiMessage]);

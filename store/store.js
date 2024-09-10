@@ -3,6 +3,7 @@ import authReducer from './auth/authSlice';
 import profileReducer from './profile/profileSlice';
 import candidateReducer from './candidate/candidateSlice';
 import createdCandidateReducer from './admin/adminSlice';
+import chatReducer from './ai/chatSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import {
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   profile: profileReducer,
   candidate: candidateReducer,
   createdCandidate: createdCandidateReducer,
+  chat: chatReducer,
 });
 
 // Wrap root reducer with persistReducer

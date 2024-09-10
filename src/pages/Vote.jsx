@@ -5,6 +5,7 @@ import { candidates } from '../../store/profile/profileAuth';
 import Modal from '../components/Model';
 import { vote } from '../../store/candidate/candidateAction';
 import BackButton from '../components/BackButton';
+import Chat from '../components/AiChat';
 
 const Vote = () => {
   const dispatch = useDispatch();
@@ -115,6 +116,7 @@ const Vote = () => {
         />
       </div>
       <BackButton />
+      <Chat />
     </div>
   );
 };

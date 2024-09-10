@@ -7,6 +7,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import BackButton from '../components/BackButton';
+import Chat from '../components/AiChat';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -149,6 +150,7 @@ const Home = () => {
           </div>
         </div>
         <BackButton />
+        <Chat />
       </div>
     </div>
   );

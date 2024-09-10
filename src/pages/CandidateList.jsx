@@ -6,6 +6,7 @@ import { MdDelete } from 'react-icons/md';
 import BackButton from '../components/BackButton';
 import Modal from '../components/Model';
 import { deleteCandidate } from '../../store/candidate/candidateAction';
+import Chat from '../components/AiChat';
 
 const CandidateList = () => {
   const { profile } = useSelector((state) => state.profile);
@@ -130,6 +131,7 @@ const CandidateList = () => {
         message="Confirm Your Vote"
       />
       <BackButton />
+      <Chat />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { candidates } from '../../store/profile/profileAuth';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import BackButton from '../components/BackButton';
+import Chat from '../components/AiChat';
 
 const Result = () => {
   const dispatch = useDispatch();
@@ -126,6 +127,7 @@ const Result = () => {
         )}
       </div>
       <BackButton />
+      <Chat />
     </div>
   );
 };
